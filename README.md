@@ -1,4 +1,9 @@
 Install Instructions
+
+**WARNING: Pillow==6.2.02 Dependency does not support Python 3.8.***
+
+RECOMMENDED Python Version: Python 3.7.4
+
 =============================
 
 These steps are for running this locally: 
@@ -30,7 +35,7 @@ Once the virtual environment is active, install the dependencies::
 
     pip3 install -r requirements.txt
 
-If there are no errors, we can move forward while continuing to work within the virtual environment named: "env"
+If there are no errors, move forward while continuing to work within the virtual environment named: "env"
 
 These two commands may not be needed depending on how it was installed.
 Ignore any failed messages and continue to the runserver command.

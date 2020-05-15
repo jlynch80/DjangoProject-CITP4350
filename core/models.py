@@ -9,7 +9,8 @@ from django_countries.fields import CountryField
 CATEGORY_CHOICES = (
     ('SE', 'Sedan'),
     ('TR', 'Truck'),
-    ('SU', 'SUV')
+    ('SU', 'SUV'),
+    ('SP', 'Sports')
 )
 
 LABEL_CHOICES = (
@@ -118,7 +119,7 @@ class Order(models.Model):
     2. Adding a billing address
     (Failed checkout)
     3. Payment
-    (Preprocessing, processing, packaging etc.)
+
     4. Being delivered
     5. Received
     6. Refunds
@@ -127,6 +128,7 @@ class Order(models.Model):
     def __str__(self):
         return self.user.username
 
+    # Running calc for final price after coupon.
     def get_total(self):
         total = 0
         for order_item in self.items.all():

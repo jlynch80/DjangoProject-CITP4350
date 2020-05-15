@@ -4,23 +4,24 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-  <main>
-    <div class="container">
-      <section class="mb-4">
-        <div class="row wow fadeIn">
-          <div class='col-6 offset-3'>
-            <h1>{% trans "Sign Out" %}</h1>
-            <p>{% trans 'Are you sure you want to sign out?' %}</p>
-            <form method="post" action="{% url 'account_logout' %}">
-              {% csrf_token %}
-              {% if redirect_field_value %}
-              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-              {% endif %}
-              <button class='btn btn-primary' type="submit">{% trans 'Sign Out' %}</button>
-            </form>
-          </div>
+
+<main>
+  <div class="container" style="padding-top:50px;">
+    <section class="mb-4">
+      <div class="row wow fadeIn">
+        <div class='col-8 offset-2'>
+          <h1 class='offset-1 pb-2'>{% trans "Are you sure you want to sign out?" %}</h1>
+          <h5 class='offset-4 pb-3'>{% trans 'Please confirm logout' %}</h5>
+          <form method="post" class='offset-0' action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class='btn-lg btn-primary btn-block' type="submit">{% trans 'Logout' %}</button>
+          </form>
         </div>
-      </section>
-    </div>
-  </main>
+      </div>
+    </section>
+  </div>
+</main>
 {% endblock %}

@@ -4,6 +4,7 @@ from .models import Item, OrderItem, Order, Payment, Coupon, Refund, Address, Us
 
 
 def make_refund_accepted(modeladmin, request, queryset):
+    # update
     queryset.update(refund_requested=False, refund_granted=True)
 
 

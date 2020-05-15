@@ -3,7 +3,7 @@ from .base import *
 # DEBUG = config('DEBUG', cast=bool)
 # ALLOWED_HOSTS = ['ip-address', 'www.your-website.com']
 DEBUG = False
-ALLOWED_HOSTS = ['0.0.0.0:42000']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # ['0.0.0.0:42000']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -23,5 +23,5 @@ DATABASES = {
     }
 }
 
-STRIPE_PUBLIC_KEY = config('STRIPE_LIVE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = config('STRIPE_LIVE_SECRET_KEY')
+STRIPE_PUBLIC_KEY = ''  # config('STRIPE_LIVE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = ''  # config('STRIPE_LIVE_SECRET_KEY')

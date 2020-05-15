@@ -193,9 +193,14 @@ class CheckoutView(View):
                 payment_option = form.cleaned_data.get('payment_option')
 
                 if payment_option == 'S':
-                    return redirect('core:payment', payment_option='stripe')
+                    # return redirect('core:payment', payment_option='stripe')
+                    return redirect("core:order-summary")
                 elif payment_option == 'P':
-                    return redirect('core:payment', payment_option='paypal')
+                    # return redirect('core:payment', payment_option='paypal')
+                    return redirect("core:order-summary")
+                elif payment_option == 'B':
+                    # return redirect('core:payment', payment_option='bitcoin')
+                    return redirect("core:order-summary")
                 else:
                     messages.warning(
                         self.request, "Invalid payment option selected")

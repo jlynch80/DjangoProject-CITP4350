@@ -3,9 +3,9 @@ from .base import *
 DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-INSTALLED_APPS += [
-    'debug_toolbar'
-]
+# INSTALLED_APPS += [
+#     'debug_toolbar'
+# ]
 
 MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 
@@ -27,14 +27,14 @@ DEBUG_TOOLBAR_PANELS = [
 ]
 
 
-def show_toolbar(request):
-    return True
+# def show_toolbar(request):
+#     return True
 
 
-DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': show_toolbar
-}
+# DEBUG_TOOLBAR_CONFIG = {
+#     'INTERCEPT_REDIRECTS': False,
+#     'SHOW_TOOLBAR_CALLBACK': show_toolbar
+# }
 
 DATABASES = {
     'default': {
